@@ -1,6 +1,7 @@
 const express = require("express")
 const mongoose = require('mongoose');
 const app = express();
+const path = require('path');
 
 const sauceRoutes = require('./routes/sauce')
 const userRoutes = require("./routes/user")
@@ -32,9 +33,10 @@ app.use(express.json());
 
 
 // requete create, read, update, delete (CRUD) de sauce
+
 app.use("/api/sauces", sauceRoutes);
 app.use("/api/auth", userRoutes);
-
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
 
 
