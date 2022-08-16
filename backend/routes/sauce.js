@@ -6,7 +6,7 @@ const multer = require("../middleware/multer")
 const sauceControllers = require("../controllers/sauce")
 
 
-// requete create, read, update, delete (CRUD) de sauce
+// Routes create, read, update, delete (CRUD) et Routes like/dislike de notesauce
 router.post("/", auth, multer, sauceControllers.createSauce);
 
 router.post("/:id/like", auth, sauceControllers.noteSauce )

@@ -1,6 +1,7 @@
 const http = require('http');
 const app = require('./app');
 
+// Lancement du server avec vérification des ports
 const normalizePort = val => {
   const port = parseInt(val, 10);
 

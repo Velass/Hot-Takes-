@@ -7,7 +7,7 @@ const sauceRoutes = require('./routes/sauce')
 const userRoutes = require("./routes/user")
 
 
-
+// Connexion sur MongoDB
 
 mongoose.connect('mongodb+srv://floflo:JSXPi7nfAfniYWuc@hot-takes.jfeqy.mongodb.net/?retryWrites=true&w=majority',
   {
@@ -32,12 +32,9 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 
-// requete create, read, update, delete (CRUD) de sauce
-
+// Mise en place des routes et du chemin
 app.use("/api/sauces", sauceRoutes);
 app.use("/api/auth", userRoutes);
 app.use('/images', express.static(path.join(__dirname, 'images')));
-
-
 
 module.exports = app;
